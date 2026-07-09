@@ -121,4 +121,4 @@ Switch language: **Sidebar → Language toggle** or **Profile → Language tab**
 
 ---
 
-*AgriConnect v5 © 2025 · Final Year CS Project · Nepal*
+*AgriConnect © 2025 · Final Year Project · Nepal*
