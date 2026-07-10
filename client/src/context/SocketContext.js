@@ -9,7 +9,7 @@ export function SocketProvider({ token, children }) {
 
   useEffect(() => {
     if (!token) return;
-    const socket = io(process.env.REACT_APP_SERVER_URL || 'http://localhost:5000', {
+    const socket = io(process.env.REACT_APP_SERVER_URL, {
       auth: { token },
       transports: ['websocket'],
     });

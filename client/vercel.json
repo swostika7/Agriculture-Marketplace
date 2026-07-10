@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://agriculture-marketplace-vkb0.onrender.com/api/$1"
+    },
+    {
+      "source": "/socket.io/(.*)",
+      "destination": "https://agriculture-marketplace-vkb0.onrender.com/socket.io/$1"
+    }
+  ]
+}
