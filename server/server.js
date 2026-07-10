@@ -1,7 +1,7 @@
 
 require('dotenv').config();
 
-/* ── Startup config check ── */
+// configure check 
 (function checkConfig() {
   const warn = (k, hint) => console.warn(`⚠️  ${k} not set — ${hint}`);
   if (!process.env.SMTP_USER || process.env.SMTP_USER.includes('your_')) warn('SMTP_USER', 'email OTPs will fail. See AUTH_SETUP_GUIDE.md');
@@ -158,9 +158,7 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/agri-market
   .then(() => { console.log('✅  MongoDB connected'); rebuildProductTrie(); })
   .catch(e => { console.error(e); process.exit(1); });
 
-/* ══════════════════════════════════════════════════════════
-   SCHEMAS
-══════════════════════════════════════════════════════════ */
+//  SCHEMAS
 const User = mongoose.model('User', new mongoose.Schema({
   name: { type: String, required: true, trim: true },
   email: { type: String, required: true, unique: true, lowercase: true },
@@ -312,15 +310,6 @@ async function sendNotification(userID, type, title, body, link = '', meta = {})
   } catch (e) { console.error('Notif:', e.message); }
 }
 
-/* ══════════════════════════════════════════════════════════
-   TRIE — Prefix-based instant product search + autocomplete
-   ──────────────────────────────────────────────────────────
-   Each Trie node stores:
-     children   : Map of char → TrieNode
-     isEnd      : marks a complete word boundary
-     productIds : Set of productIDs that match this word
-     frequency  : cumulative search/view demand for ranking
-══════════════════════════════════════════════════════════ */
 class TrieNode {
   constructor() {
     this.children = {};       // char → TrieNode
@@ -1204,16 +1193,6 @@ app.get('/api/orders/history', auth, async (req, res) => {
 
 
 
-/* ══════════════════════════════════════════════════════════
-   PAYMENT — eSewa (merchant: 9741677342) + COD with 25% advance
-   ──────────────────────────────────────────────────────────
-   eSewa account receiving all payments : 9741677342
-   Production URL : https://epay.esewa.com.np
-   Sandbox URL    : https://rc-epay.esewa.com.np  (default for dev)
-   COD rule       : 25% advance must be paid via eSewa;
-                    remaining 75% collected on delivery
-══════════════════════════════════════════════════════════ */
-
 // ── eSewa configuration ──────────────────────────────────
 const ESEWA_MERCHANT_CODE = process.env.ESEWA_MERCHANT_CODE || 'EPAYTEST';
 const ESEWA_SECRET_KEY = process.env.ESEWA_SECRET_KEY || '8gBm/:&EnhH.1/q';
@@ -1437,7 +1416,8 @@ app.get('/api/analytics', auth, async (req, res) => {
 app.get('/api/market-insights', auth, async (req, res) => { try { const [td, cd, ro] = await Promise.all([Product.find({ isAvailable: true }).sort({ demand: -1 }).limit(5).select('cropName demand price category'), Product.aggregate([{ $group: { _id: '$category', count: { $sum: 1 }, avgPrice: { $avg: '$price' } } }]), Order.countDocuments({ createdAt: { $gte: new Date(Date.now() - 7 * 86400000) } })]); res.json({ topDemand: td, categoryDist: cd, recentOrders: ro }); } catch (e) { res.status(500).json({ message: e.message }); } });
 app.get('/api/health', (_, res) => res.json({ status: 'OK', version: '6.1' }));
 
-app.listen(PORT, () => {
+const PORT = process.env.PORT || 5000;
+
+server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-module.exports = { app, io };
