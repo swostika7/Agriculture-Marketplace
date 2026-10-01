@@ -1,0 +1,39 @@
+{
+  "name": "agri-marketplace-client-v3",
+  "version": "3.0.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.6.2",
+    "leaflet": "^1.9.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.21.1",
+    "react-scripts": "5.0.1",
+    "recharts": "^2.10.3",
+    "socket.io-client": "4.7.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "proxy": "http://localhost:5000",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
