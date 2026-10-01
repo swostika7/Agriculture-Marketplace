@@ -1,10 +1,10 @@
-# 🌾 AgriConnect v5 — AI-Powered Smart Agriculture Marketplace
+# Agriculture Marketplace
 
 > **Final Year Project** · MERN + Socket.IO · Tailwind CSS · Bilingual · Cart · Reviews · Chat · Notifications
 
 ---
 
-## 🆕 What's New in v5
+##  What's New in v5
 
 | # | Feature | Details |
 |---|---------|---------|
@@ -17,7 +17,7 @@
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 agri-marketplace-v5/
@@ -43,7 +43,7 @@ agri-marketplace-v5/
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ```bash
 # Install everything
@@ -63,7 +63,7 @@ cd .. && npm run dev
 
 ---
 
-## 🔌 New API Endpoints
+##  New API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -86,7 +86,7 @@ cd .. && npm run dev
 
 ---
 
-## 🔔 Notification Triggers
+##  Notification Triggers
 
 | Event | Who gets notified |
 |-------|------------------|
@@ -99,7 +99,7 @@ cd .. && npm run dev
 
 ---
 
-## 💬 Chat Architecture
+##  Chat Architecture
 
 - **Socket.IO** rooms: `user_{id}` for personal notifications, `conv_{id}` for conversation messages
 - REST fallback: `POST /api/conversations/:id/messages` for non-socket environments
@@ -108,7 +108,7 @@ cd .. && npm run dev
 
 ---
 
-## 🌐 Bilingual Support
+##  Bilingual Support
 
 Translations live in `src/context/LanguageContext.js`. Both languages cover:
 - All navigation labels
