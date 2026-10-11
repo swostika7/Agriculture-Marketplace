@@ -113,7 +113,7 @@ export default function Layout() {
     setNotifs(prev => prev.map(n => ({ ...n, read:true }))); setUnread(0);
   };
 
-  const notifIcon = { order_placed:'📦', order_shipped:'🚚', order_delivered:'✅', order_cancelled:'❌', new_review:'⭐', chat_message:'💬', system:'🔔' };
+  const notifIcon = { order_placed:'', order_shipped:'', order_delivered:'', order_cancelled:'', new_review:'', chat_message:'', system:'' };
 
   return (
     <div className="min-h-screen flex bg-earth-50 font-body">

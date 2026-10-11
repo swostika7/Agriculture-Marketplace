@@ -141,42 +141,42 @@ export default function LandingPage() {
 
   const features = [
     {
-      icon: '🌾',
+      icon: '',
       title: ne ? 'किसानसँग सिधा जोडिनुस्' : 'Connect Direct with Farmers',
       desc: ne ? 'बिचौलिया बिना — किसानबाट सिधा ताजा उत्पादन। उचित मूल्य, दुवैका लागि।'
         : 'No middlemen — fresh produce straight from the source. Fair prices for both sides.',
       accent: 'bg-leaf-400',
     },
     {
-      icon: '🏷️',
+      icon: '',
       title: ne ? 'सेल मूल्य प्रणाली' : 'Sale Price System',
       desc: ne ? 'किसानले नियमित र छुट मूल्य राख्न सक्छन् — उत्पादन SALE ब्याजसहित देखिन्छ।'
         : 'Farmers set regular and discount prices — products appear with SALE badge and % off.',
       accent: 'bg-red-400',
     },
     {
-      icon: '🗺️',
+      icon: '',
       title: ne ? 'GPS नेभिगेसन' : 'Real GPS Navigation',
       desc: ne ? 'OSRM बाट वास्तविक सडक मार्ग — हिड्दा वा गाडीमा। Google Maps मा खोल्नुस्।'
         : 'Real road routes via OSRM — walking or driving. Exact coordinates, open in Google Maps.',
       accent: 'bg-blue-400',
     },
     {
-      icon: '💬',
+      icon: '',
       title: ne ? 'रियल-टाइम च्याट' : 'Live Farmer Chat',
       desc: ne ? 'किसान र उपभोक्ताबीच सिधा सन्देश — नयाँ सन्देशमा तुरन्त सूचना।'
         : 'Direct messaging between farmers and consumers with instant badge notifications.',
       accent: 'bg-purple-400',
     },
     {
-      icon: '📦',
+      icon: '',
       title: ne ? 'अर्डर ट्र्याकिङ' : 'Live Order Tracking',
       desc: ne ? 'खेतबाट घरसम्म — अर्डरको हरेक चरणमा रियल-टाइम अपडेट।'
         : 'From farm to door — real-time updates at every stage of your delivery.',
       accent: 'bg-orange-400',
     },
     {
-      icon: '📊',
+      icon: '',
       title: ne ? 'बिक्री विश्लेषण' : 'Sales Analytics',
       desc: ne ? 'किसान र उपभोक्ता दुवैका लागि ट्रेन्ड ग्राफ र बजार अन्तर्दृष्टि।'
         : 'Trend charts and market insights for both farmers and consumers.',
@@ -339,9 +339,9 @@ export default function LandingPage() {
 
                   {/* Products */}
                   {[
-                    { e: '🥬', name: ne ? 'जैविक पालक' : 'Organic Spinach', loc: 'Pokhara', reg: 80, sale: 60, hasSale: true },
-                    { e: '🥭', name: ne ? 'अल्फान्सो आँप' : 'Alphonso Mango', loc: 'Chitwan', reg: 200, sale: null, hasSale: false },
-                    { e: '🥛', name: ne ? 'ताजा दूध' : 'Fresh Buffalo Milk', loc: 'Dharan', reg: 120, sale: null, hasSale: false },
+                    { e: '', name: ne ? 'जैविक पालक' : 'Organic Spinach', loc: 'Pokhara', reg: 80, sale: 60, hasSale: true },
+                    { e: '', name: ne ? 'अल्फान्सो आँप' : 'Alphonso Mango', loc: 'Chitwan', reg: 200, sale: null, hasSale: false },
+                    { e: '', name: ne ? 'ताजा दूध' : 'Fresh Buffalo Milk', loc: 'Dharan', reg: 120, sale: null, hasSale: false },
                   ].map((p, i) => (
                     <div key={i} className="flex items-center gap-3 py-2.5 border-b border-earth-50 last:border-0">
                       <span className="text-2xl">{p.e}</span>
